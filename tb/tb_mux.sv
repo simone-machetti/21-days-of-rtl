@@ -18,17 +18,17 @@ module tb_mux ();
         .y_o  (y_o)
     );
 
-  initial begin
-    $dumpfile("activity.vcd");
-    $dumpvars(0, tb_mux.mux_i);
-    for (int i = 0; i < 10; i++) begin
-        a_i   = 8'($urandom_range(0, 32'd255));
-        b_i   = 8'($urandom_range(0, 32'd255));
-        sel_i = 1'($random % 2);
-        #5;
+    initial begin
+        $dumpfile("activity.vcd");
+        $dumpvars(0, tb_mux.mux_i);
+        for (int i = 0; i < 10; i++) begin
+            a_i   = 8'($urandom_range(0, 32'd255));
+            b_i   = 8'($urandom_range(0, 32'd255));
+            sel_i = 1'($random % 2);
+            #5;
+        end
+        $dumpoff;
+        $finish();
     end
-    $dumpoff;
-    $finish();
-  end
 
 endmodule
