@@ -10,15 +10,15 @@
 
 module compressor_4_2 #(
     parameter int IN_WIDTH = 12,
+    parameter int EXT_BITS = 2,
 
-    localparam int OUT_WIDTH = IN_WIDTH + 2
+    localparam int OUT_WIDTH = IN_WIDTH + EXT_BITS
 )(
     input  logic [ IN_WIDTH-1:0] in_i [4],
     output logic [OUT_WIDTH-1:0] sum_o,
     output logic [OUT_WIDTH-1:0] carry_o
 );
-
-    localparam EXT_WIDTH = IN_WIDTH + 1;
+    localparam int EXT_WIDTH = OUT_WIDTH + 1;
 
     logic [EXT_WIDTH-1:0] ext_in [4];
     logic [EXT_WIDTH-1:0] s, c;
@@ -53,7 +53,7 @@ module compressor_4_2 #(
         end
     endgenerate
 
-    assign sum_o   = {s[EXT_WIDTH-1], s};
-    assign carry_o = {c, 1'b0};
+    assign sum_o   = s[OUT_WIDTH-1:0];
+    assign carry_o = {c[OUT_WIDTH-2:0], 1'b0};
 
 endmodule

@@ -19,7 +19,9 @@ sim: clean-sim
 	mkdir -p $(CODE_HOME)/21-days-of-rtl/sim/$(OUT_DIR)/build && \
 	mkdir -p $(CODE_HOME)/21-days-of-rtl/sim/$(OUT_DIR)/output && \
 	./run.sh && \
-	mv $(CODE_HOME)/21-days-of-rtl/scripts/sim/activity.vcd $(CODE_HOME)/21-days-of-rtl/sim/$(OUT_DIR)/output
+	if [ -f $(CODE_HOME)/21-days-of-rtl/scripts/sim/activity.vcd ]; then \
+	mv $(CODE_HOME)/21-days-of-rtl/scripts/sim/activity.vcd $(CODE_HOME)/21-days-of-rtl/sim/$(OUT_DIR)/output; \
+	fi
 
 clean-all:
 	rm -rf $(CODE_HOME)/21-days-of-rtl/sim
