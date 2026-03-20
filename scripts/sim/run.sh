@@ -17,7 +17,6 @@ verilator \
     -I"${CODE_HOME}/21-days-of-rtl/rtl" \
     --top-module "tb_${SEL_TOP_LEVEL}" \
     -f "${CODE_HOME}/21-days-of-rtl/scripts/sim/filelist.f" \
-       "${CODE_HOME}/21-days-of-rtl/tb/tb_${SEL_TOP_LEVEL}.sv" \
     -Mdir "${CODE_HOME}/21-days-of-rtl/sim/${SEL_OUT_DIR}/build/obj_dir" \
     -o "${CODE_HOME}/21-days-of-rtl/sim/${SEL_OUT_DIR}/build/simv" \
     | tee "${CODE_HOME}/21-days-of-rtl/sim/${SEL_OUT_DIR}/output/compile.log"
