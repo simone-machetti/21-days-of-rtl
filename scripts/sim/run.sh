@@ -17,7 +17,7 @@ verilator \
     -Wno-fatal \
     -I"${CODE_HOME}/rtl-lab/rtl" \
     --top-module "tb_${SEL_TOP_LEVEL}" \
-    -f "${CODE_HOME}/rtl-lab/scripts/sim/filelist.f" \
+    "${CODE_HOME}/rtl-lab/tb/tb_${SEL_TOP_LEVEL}.sv" \
     -Mdir "${CODE_HOME}/rtl-lab/sim/${SEL_OUT_DIR}/build/obj_dir" \
     -o "${CODE_HOME}/rtl-lab/sim/${SEL_OUT_DIR}/build/simv" \
     | tee "${CODE_HOME}/rtl-lab/sim/${SEL_OUT_DIR}/output/compile.log"

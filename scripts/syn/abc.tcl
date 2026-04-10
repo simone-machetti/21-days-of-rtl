@@ -2,4 +2,11 @@
 # Author: Simone Machetti
 # -----------------------------------------------------------------------------
 
-${CODE_HOME}/rtl-lab/tb/tb_${SEL_TOP_LEVEL}.sv
+strash
+dc2
+map -B 0.9
+topo
+stime -c
+buffer -c
+upsize -c
+dnsize -c
