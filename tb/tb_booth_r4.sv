@@ -19,8 +19,8 @@ module tb_booth_r4 ();
     logic [OUT_WIDTH-1:0] exp;
 
     booth_r4 #(
-        .WIDTH_A(WIDTH_A),
-        .WIDTH_B(WIDTH_B)
+        .IN_WIDTH_A(WIDTH_A),
+        .IN_WIDTH_B(WIDTH_B)
     ) booth_r4_i (
         .a_i (a),
         .b_i (b),
